@@ -20,8 +20,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     projectionView.hidden = YES;
-//    [projectionView setFrame:CGRectMake(projectionView.frame.origin.x, projectionView.frame.origin.y, projectionView.frame.size.width, self.rows.count)];
+    self.title = @"Row projections";
+    [self optimizeRowsArray];
     [self createProjection];
+    
+    // TODO: add button on navigation bar which will lead to the DFT page
     // Do any additional setup after loading the view.
 }
 
@@ -30,17 +33,21 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)optimizeRowsArray{
+    NSNumber *min = [self.rows valueForKeyPath:@"@min.intValue"];
+    NSLog(@"minimal value in array :%@", min);
+    for (int i = 0; i < self.rows.count; i++) {
+        NSNumber *newValue = [NSNumber numberWithInt:([_rows[i] intValue] - [min intValue])];
+        _rows[i] = newValue;
+
+    }
+}
 -(void)createProjection{
     for (int i = 0; i < self.rows.count; i++) {
         float width = self.view.frame.size.width;
         float lineWidth = width*width/[self.rows[i] intValue];
-        UIView* line = [[UIView alloc] initWithFrame:CGRectMake(0, 20+i, lineWidth,1 )];
+        UIView* line = [[UIView alloc] initWithFrame:CGRectMake(0, 30+i, lineWidth, 1 )];
         NSLog(@"rows[i] :%f", lineWidth);
-//        NSLog(@"projectionView.frame.origin.y+i :%f", projectionView.frame.origin.y+i);
-//        NSLog(@"line height :%f", line.frame.size.height);
-//        NSLog(@"projectionView.frame.size.width :%f", width);
-        
-//        NSLog(@"view height :%f", projectionView.frame.size.height);
         NSLog(@"rows.count :%lu", (unsigned long)self.rows.count);
         [line setBackgroundColor:[UIColor blackColor]];
         [self.view addSubview:line];

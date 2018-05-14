@@ -37,7 +37,7 @@
     UITapGestureRecognizer *tap4 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tappedFrth)];
     [_imgSepagir3 addGestureRecognizer:tap4];
 
-    
+    self.title = @"Choose a manuscript";
 
     // Do any additional setup after loading the view.
 }
@@ -47,25 +47,32 @@
 -(void)tappedFirst{
     UploadImageViewController* vc = [self.storyboard instantiateViewControllerWithIdentifier:@"UploadImageViewController"];
     vc.image = _imgSepagir.image;
-    [self presentViewController:vc animated:NO completion:nil];
+//    [self presentViewController:vc animated:NO completion:nil];
+    [self.navigationController pushViewController:vc animated:NO];
+
 }
 
 -(void)tappedScnd{
     UploadImageViewController* vc = [self.storyboard instantiateViewControllerWithIdentifier:@"UploadImageViewController"];
     vc.image = _imgSepagir1.image;
-    [self presentViewController:vc animated:NO completion:nil];
+//    [self presentViewController:vc animated:NO completion:nil];
+    [self.navigationController pushViewController:vc animated:NO];
 }
 
 -(void)tappedTrd{
     UploadImageViewController* vc = [self.storyboard instantiateViewControllerWithIdentifier:@"UploadImageViewController"];
     vc.image = _imgSepagir2.image;
-    [self presentViewController:vc animated:NO completion:nil];
+//    [self presentViewController:vc animated:NO completion:nil];
+    [self.navigationController pushViewController:vc animated:NO];
+
 }
 
 -(void)tappedFrth{
     UploadImageViewController* vc = [self.storyboard instantiateViewControllerWithIdentifier:@"UploadImageViewController"];
     vc.image = _imgSepagir3.image;
-    [self presentViewController:vc animated:NO completion:nil];
+//    [self presentViewController:vc animated:NO completion:nil];
+    [self.navigationController pushViewController:vc animated:NO];
+
 }
 
 - (void)didReceiveMemoryWarning {

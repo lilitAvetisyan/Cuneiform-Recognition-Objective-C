@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0DD8E6528BE80F812A9D64E6 /* libPods-Capstone Proect.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7349DD2E0A386191ED9346CA /* libPods-Capstone Proect.a */; };
+		A348D0D620AA28F800280D00 /* RowsFFTVisualizationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A348D0D520AA28F800280D00 /* RowsFFTVisualizationViewController.m */; };
+		A348D0D920AA294400280D00 /* Complex.m in Sources */ = {isa = PBXBuildFile; fileRef = A348D0D820AA294400280D00 /* Complex.m */; };
 		A3A6ACB2207AA8EC007CFE31 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A3A6ACB1207AA8EC007CFE31 /* AppDelegate.m */; };
 		A3A6ACB8207AA8EC007CFE31 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3A6ACB6207AA8EC007CFE31 /* Main.storyboard */; };
 		A3A6ACBA207AA8EE007CFE31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3A6ACB9207AA8EE007CFE31 /* Assets.xcassets */; };
@@ -21,6 +23,10 @@
 
 /* Begin PBXFileReference section */
 		7349DD2E0A386191ED9346CA /* libPods-Capstone Proect.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Capstone Proect.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A348D0D420AA28F800280D00 /* RowsFFTVisualizationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RowsFFTVisualizationViewController.h; sourceTree = "<group>"; };
+		A348D0D520AA28F800280D00 /* RowsFFTVisualizationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RowsFFTVisualizationViewController.m; sourceTree = "<group>"; };
+		A348D0D720AA294400280D00 /* Complex.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Complex.h; sourceTree = "<group>"; };
+		A348D0D820AA294400280D00 /* Complex.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Complex.m; sourceTree = "<group>"; };
 		A3A6ACAD207AA8EC007CFE31 /* Capstone Proect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Capstone Proect.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3A6ACB0207AA8EC007CFE31 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A3A6ACB1207AA8EC007CFE31 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -113,6 +119,8 @@
 				A3AAECA120A339AC0032DF17 /* ChooseImageViewController.m */,
 				A3CE962020A7911C0005F540 /* HorizontalProjectionViewController.h */,
 				A3CE962120A7911C0005F540 /* HorizontalProjectionViewController.m */,
+				A348D0D420AA28F800280D00 /* RowsFFTVisualizationViewController.h */,
+				A348D0D520AA28F800280D00 /* RowsFFTVisualizationViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -122,6 +130,8 @@
 			children = (
 				A3B21B632087956300870A5E /* TwoDimArray.h */,
 				A3B21B642087956300870A5E /* TwoDimArray.m */,
+				A348D0D720AA294400280D00 /* Complex.h */,
+				A348D0D820AA294400280D00 /* Complex.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -222,8 +232,10 @@
 				A3A6ACC0207AA8EE007CFE31 /* main.m in Sources */,
 				A3AAECA220A339AC0032DF17 /* ChooseImageViewController.m in Sources */,
 				A3A6ACB2207AA8EC007CFE31 /* AppDelegate.m in Sources */,
+				A348D0D920AA294400280D00 /* Complex.m in Sources */,
 				A3B21B652087956300870A5E /* TwoDimArray.m in Sources */,
 				A3CE962220A7911C0005F540 /* HorizontalProjectionViewController.m in Sources */,
+				A348D0D620AA28F800280D00 /* RowsFFTVisualizationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

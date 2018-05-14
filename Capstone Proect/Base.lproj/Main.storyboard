@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0zf-Yt-4pO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IVt-pv-jBl">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -67,6 +67,7 @@
                     </view>
                     <connections>
                         <outlet property="btnUpload" destination="5H4-z2-Tuw" id="isW-0C-uCf"/>
+                        <outlet property="openProjection" destination="Ca6-3b-BFH" id="L8c-oE-w3X"/>
                         <outlet property="originalImage" destination="pai-wC-DM7" id="YZa-wC-4dK"/>
                     </connections>
                 </viewController>
@@ -106,6 +107,22 @@
             </objects>
             <point key="canvasLocation" x="2125.5999999999999" y="32.833583208395808"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="5UN-LO-B1d">
+            <objects>
+                <navigationController id="IVt-pv-jBl" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="KK5-ex-fcZ">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="0zf-Yt-4pO" kind="relationship" relationship="rootViewController" id="U3p-eD-5KW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7YH-QH-z44" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-92" y="33"/>
+        </scene>
         <!--Choose Image View Controller-->
         <scene sceneID="f3Z-Xq-AXX">
             <objects>
@@ -115,25 +132,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sepagir" translatesAutoresizingMaskIntoConstraints="NO" id="Kl8-Hz-Iec">
-                                <rect key="frame" x="67" y="40" width="240" height="128"/>
+                                <rect key="frame" x="67" y="84" width="240" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="Ycm-0A-Ihc"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sepagir1" translatesAutoresizingMaskIntoConstraints="NO" id="DTZ-bF-B5w">
-                                <rect key="frame" x="67" y="188" width="240" height="128"/>
+                                <rect key="frame" x="67" y="232" width="240" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="hY1-xe-2JX"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sepagir2" translatesAutoresizingMaskIntoConstraints="NO" id="dcZ-Ep-cYW">
-                                <rect key="frame" x="67" y="335" width="240" height="128"/>
+                                <rect key="frame" x="67" y="379" width="240" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="AUr-ZE-jaw"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sepagir3" translatesAutoresizingMaskIntoConstraints="NO" id="ICc-DA-VOV">
-                                <rect key="frame" x="67" y="483" width="240" height="128"/>
+                                <rect key="frame" x="67" y="527" width="240" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="EXb-14-Iu9"/>
                                 </constraints>
@@ -156,6 +173,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="XV8-i4-KHq"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Q5G-sU-9V4"/>
                     <connections>
                         <outlet property="imgSepagir" destination="Kl8-Hz-Iec" id="qiL-mf-OCq"/>
                         <outlet property="imgSepagir1" destination="DTZ-bF-B5w" id="9n5-11-r1u"/>

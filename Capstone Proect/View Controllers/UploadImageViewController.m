@@ -18,8 +18,8 @@
 @interface UploadImageViewController () <G8TesseractDelegate>{
     
     IBOutlet UIImageView *originalImage;
-    IBOutlet UIButton *btnNextStep;
-    IBOutlet UIButton *btnUpload;
+    IBOutlet UIButton *btnUpload; // button to make black and white
+    IBOutlet UIButton *openProjection;
     TwoDimArray* pixelArray;
     int numRows;
     int numCols;
@@ -37,6 +37,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    openProjection.hidden = YES;
+    self.title = @"Black and White";
     rowSums = [[NSMutableArray alloc] init];
     colSums = [[NSMutableArray alloc] init];
     
@@ -49,6 +51,8 @@
 }
 #pragma mark Button Actions
 - (IBAction)btnPhotoTapped:(id)sender {
+    openProjection.hidden = NO;
+    
     UIImage* img = self.image;
     
     originalImage.image =[img g8_grayScale];
@@ -67,7 +71,9 @@
     
     HorizontalProjectionViewController* vc = [self.storyboard instantiateViewControllerWithIdentifier:@"HorizontalProjectionViewController"];
     vc.rows = rowSums;
-    [self presentViewController:vc animated:NO completion:nil];
+//    [self presentViewController:vc animated:NO completion:nil];
+    [self.navigationController pushViewController:vc animated:NO];
+
     
 }
 
