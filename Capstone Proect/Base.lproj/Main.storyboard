@@ -107,6 +107,146 @@
             </objects>
             <point key="canvasLocation" x="2125.5999999999999" y="32.833583208395808"/>
         </scene>
+        <!--Rows Projection Soothening View Controller-->
+        <scene sceneID="DeF-Su-vva">
+            <objects>
+                <viewController storyboardIdentifier="RowsFFTVisualizationViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="MA0-sE-meQ" customClass="RowsProjectionSootheningViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rmJ-XP-q6g">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Xts-yg-Y8B"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xve-Jz-dc7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2850" y="33"/>
+        </scene>
+        <!--Cropped Photo View Controller-->
+        <scene sceneID="mpa-NU-OYD">
+            <objects>
+                <viewController storyboardIdentifier="CroppedPhotoViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="W8t-Dw-Iiq" customClass="CroppedPhotoViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dVo-di-ZeO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Skm-Gy-2KH">
+                                <rect key="frame" x="16" y="66" width="343" height="453"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="453" id="Sis-xb-hfi"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JJs-gH-5ed">
+                                <rect key="frame" x="16" y="527" width="343" height="56"/>
+                                <color key="backgroundColor" red="0.16862745100000001" green="0.28627450980000002" blue="0.5450980392" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="zK0-uT-MQ9"/>
+                                </constraints>
+                                <state key="normal" title="Black N White">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="makeBlackAndWhite:" destination="W8t-Dw-Iiq" eventType="touchUpInside" id="6g6-cX-0rC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fS8-TR-DcO">
+                                <rect key="frame" x="16" y="591" width="343" height="56"/>
+                                <color key="backgroundColor" red="0.16862745100000001" green="0.28627450980000002" blue="0.5450980392" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="mbm-ad-t0F"/>
+                                </constraints>
+                                <state key="normal" title="See Projection">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showProjection:" destination="W8t-Dw-Iiq" eventType="touchUpInside" id="gMG-qh-V1q"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="fS8-TR-DcO" firstAttribute="leading" secondItem="Xr1-dn-UW7" secondAttribute="leading" constant="16" id="3iz-xj-rCa"/>
+                            <constraint firstItem="Skm-Gy-2KH" firstAttribute="leading" secondItem="Xr1-dn-UW7" secondAttribute="leading" constant="16" id="7oT-jM-Tzg"/>
+                            <constraint firstItem="JJs-gH-5ed" firstAttribute="top" secondItem="Skm-Gy-2KH" secondAttribute="bottom" constant="8" id="HGa-oK-x2c"/>
+                            <constraint firstItem="Xr1-dn-UW7" firstAttribute="trailing" secondItem="Skm-Gy-2KH" secondAttribute="trailing" constant="16" id="JQi-qP-lIS"/>
+                            <constraint firstItem="Skm-Gy-2KH" firstAttribute="top" secondItem="Xr1-dn-UW7" secondAttribute="top" constant="46" id="Jub-TO-r2W"/>
+                            <constraint firstItem="fS8-TR-DcO" firstAttribute="top" secondItem="JJs-gH-5ed" secondAttribute="bottom" constant="8" id="dS5-g2-CsC"/>
+                            <constraint firstItem="Xr1-dn-UW7" firstAttribute="trailing" secondItem="fS8-TR-DcO" secondAttribute="trailing" constant="16" id="dpZ-04-ejZ"/>
+                            <constraint firstItem="Xr1-dn-UW7" firstAttribute="trailing" secondItem="JJs-gH-5ed" secondAttribute="trailing" constant="16" id="lbm-9p-LhO"/>
+                            <constraint firstItem="JJs-gH-5ed" firstAttribute="leading" secondItem="Xr1-dn-UW7" secondAttribute="leading" constant="16" id="mj9-hS-beH"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Xr1-dn-UW7"/>
+                    </view>
+                    <connections>
+                        <outlet property="croppedImg" destination="Skm-Gy-2KH" id="KzB-QV-6Gj"/>
+                        <outlet property="projectionBtn" destination="fS8-TR-DcO" id="0as-Fa-i79"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="98f-Kh-w7O" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3586" y="33"/>
+        </scene>
+        <!--Vertical Projection View Controller-->
+        <scene sceneID="dkQ-Gq-4xU">
+            <objects>
+                <viewController storyboardIdentifier="VerticalProjectionViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="sH8-TS-ADm" customClass="VerticalProjectionViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AC3-p0-H2M">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="EJy-oM-mAh"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k3e-B4-u4K" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4319" y="33"/>
+        </scene>
+        <!--Column Projection Smoothening View Controller-->
+        <scene sceneID="zMQ-Yf-1Sq">
+            <objects>
+                <viewController storyboardIdentifier="ColumnProjectionSmootheningViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="pmc-1q-E9f" customClass="ColumnProjectionSmootheningViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qgc-6O-XbR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="SGd-5O-2q1"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UdW-Xu-SoB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5002" y="33"/>
+        </scene>
+        <!--Cropped Symbol View Controller-->
+        <scene sceneID="grG-CO-JDi">
+            <objects>
+                <viewController storyboardIdentifier="CroppedSymbolViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="KFz-mH-jci" customClass="CroppedSymbolViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fHp-2u-vdu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tKZ-Aq-ofh">
+                                <rect key="frame" x="16" y="59" width="343" height="453"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="453" id="Cie-g1-7ze"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="tKZ-Aq-ofh" firstAttribute="leading" secondItem="rqC-cM-PtK" secondAttribute="leading" constant="16" id="2I5-aW-vdB"/>
+                            <constraint firstItem="rqC-cM-PtK" firstAttribute="trailing" secondItem="tKZ-Aq-ofh" secondAttribute="trailing" constant="16" id="bow-Bs-unw"/>
+                            <constraint firstItem="tKZ-Aq-ofh" firstAttribute="top" secondItem="rqC-cM-PtK" secondAttribute="top" constant="39" id="hoy-PM-KM3"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="rqC-cM-PtK"/>
+                    </view>
+                    <connections>
+                        <outlet property="croppedSmb" destination="tKZ-Aq-ofh" id="uei-XQ-j3h"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1zY-0O-X9o" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5639" y="33"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="5UN-LO-B1d">
             <objects>

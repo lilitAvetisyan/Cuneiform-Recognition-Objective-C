@@ -7,6 +7,7 @@
 //
 
 #import "HorizontalProjectionViewController.h"
+#import "RowsProjectionSootheningViewController.h"
 
 @interface HorizontalProjectionViewController (){
     
@@ -20,10 +21,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     projectionView.hidden = YES;
-    self.title = @"Row projections";
+    self.title = @"Row projection";
+    UIBarButtonItem *barButton = [[UIBarButtonItem alloc] init];
+    barButton.title = @"Back";
+    self.navigationItem.backBarButtonItem = barButton;
+    UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc] initWithTitle:@"Smooth" style:UIBarButtonItemStylePlain target:self action:@selector(smoothen)];
+    self.navigationItem.rightBarButtonItem = anotherButton;
     [self optimizeRowsArray];
     [self createProjection];
-    
+    [self printArray];
     // TODO: add button on navigation bar which will lead to the DFT page
     // Do any additional setup after loading the view.
 }
@@ -33,6 +39,14 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)printArray{
+    NSLog(@"%@", _rows);
+    for (int i = 0; i < self.rows.count; i++) {
+//        NSLog(@"%@", _rows[i]);
+//        NSLog(<#NSString * _Nonnull format, ...#>)
+        
+    }
+}
 -(void)optimizeRowsArray{
     NSNumber *min = [self.rows valueForKeyPath:@"@min.intValue"];
     NSLog(@"minimal value in array :%@", min);
@@ -52,6 +66,14 @@
         [line setBackgroundColor:[UIColor blackColor]];
         [self.view addSubview:line];
     }
+}
+
+-(void)smoothen{
+    RowsProjectionSootheningViewController* vc = [self.storyboard instantiateViewControllerWithIdentifier:@"RowsFFTVisualizationViewController"];
+    vc.rows = self.rows;
+    vc.image = self.image;
+
+    [self.navigationController pushViewController:vc animated:NO];
 }
 
 /*

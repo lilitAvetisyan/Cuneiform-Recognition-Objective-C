@@ -10,4 +10,6 @@
 
 @interface HorizontalProjectionViewController : UIViewController
 @property NSMutableArray* rows;
+@property (strong) UIImage* image;
+
 @end

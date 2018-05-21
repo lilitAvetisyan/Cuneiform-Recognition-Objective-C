@@ -8,7 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		0DD8E6528BE80F812A9D64E6 /* libPods-Capstone Proect.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7349DD2E0A386191ED9346CA /* libPods-Capstone Proect.a */; };
-		A348D0D620AA28F800280D00 /* RowsFFTVisualizationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A348D0D520AA28F800280D00 /* RowsFFTVisualizationViewController.m */; };
+		A321162F20B37AF4004D4D7D /* CroppedPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A321162E20B37AF4004D4D7D /* CroppedPhotoViewController.m */; };
+		A321163220B38542004D4D7D /* VerticalProjectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A321163120B38542004D4D7D /* VerticalProjectionViewController.m */; };
+		A321163520B385BD004D4D7D /* ColumnProjectionSmootheningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A321163420B385BD004D4D7D /* ColumnProjectionSmootheningViewController.m */; };
+		A321163820B38ABC004D4D7D /* CroppedSymbolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A321163720B38ABC004D4D7D /* CroppedSymbolViewController.m */; };
+		A348D0D620AA28F800280D00 /* RowsProjectionSootheningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A348D0D520AA28F800280D00 /* RowsProjectionSootheningViewController.m */; };
 		A348D0D920AA294400280D00 /* Complex.m in Sources */ = {isa = PBXBuildFile; fileRef = A348D0D820AA294400280D00 /* Complex.m */; };
 		A3A6ACB2207AA8EC007CFE31 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A3A6ACB1207AA8EC007CFE31 /* AppDelegate.m */; };
 		A3A6ACB8207AA8EC007CFE31 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3A6ACB6207AA8EC007CFE31 /* Main.storyboard */; };
@@ -23,8 +27,16 @@
 
 /* Begin PBXFileReference section */
 		7349DD2E0A386191ED9346CA /* libPods-Capstone Proect.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Capstone Proect.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A348D0D420AA28F800280D00 /* RowsFFTVisualizationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RowsFFTVisualizationViewController.h; sourceTree = "<group>"; };
-		A348D0D520AA28F800280D00 /* RowsFFTVisualizationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RowsFFTVisualizationViewController.m; sourceTree = "<group>"; };
+		A321162D20B37AF4004D4D7D /* CroppedPhotoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CroppedPhotoViewController.h; sourceTree = "<group>"; };
+		A321162E20B37AF4004D4D7D /* CroppedPhotoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CroppedPhotoViewController.m; sourceTree = "<group>"; };
+		A321163020B38542004D4D7D /* VerticalProjectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VerticalProjectionViewController.h; sourceTree = "<group>"; };
+		A321163120B38542004D4D7D /* VerticalProjectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VerticalProjectionViewController.m; sourceTree = "<group>"; };
+		A321163320B385BD004D4D7D /* ColumnProjectionSmootheningViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ColumnProjectionSmootheningViewController.h; sourceTree = "<group>"; };
+		A321163420B385BD004D4D7D /* ColumnProjectionSmootheningViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ColumnProjectionSmootheningViewController.m; sourceTree = "<group>"; };
+		A321163620B38ABC004D4D7D /* CroppedSymbolViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CroppedSymbolViewController.h; sourceTree = "<group>"; };
+		A321163720B38ABC004D4D7D /* CroppedSymbolViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CroppedSymbolViewController.m; sourceTree = "<group>"; };
+		A348D0D420AA28F800280D00 /* RowsProjectionSootheningViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RowsProjectionSootheningViewController.h; sourceTree = "<group>"; };
+		A348D0D520AA28F800280D00 /* RowsProjectionSootheningViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RowsProjectionSootheningViewController.m; sourceTree = "<group>"; };
 		A348D0D720AA294400280D00 /* Complex.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Complex.h; sourceTree = "<group>"; };
 		A348D0D820AA294400280D00 /* Complex.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Complex.m; sourceTree = "<group>"; };
 		A3A6ACAD207AA8EC007CFE31 /* Capstone Proect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Capstone Proect.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,14 +125,22 @@
 		A3A6ACC6207AA904007CFE31 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				A3A6ACC7207AA93F007CFE31 /* UploadImageViewController.h */,
-				A3A6ACC8207AA93F007CFE31 /* UploadImageViewController.m */,
 				A3AAECA020A339AC0032DF17 /* ChooseImageViewController.h */,
 				A3AAECA120A339AC0032DF17 /* ChooseImageViewController.m */,
+				A3A6ACC7207AA93F007CFE31 /* UploadImageViewController.h */,
+				A3A6ACC8207AA93F007CFE31 /* UploadImageViewController.m */,
 				A3CE962020A7911C0005F540 /* HorizontalProjectionViewController.h */,
 				A3CE962120A7911C0005F540 /* HorizontalProjectionViewController.m */,
-				A348D0D420AA28F800280D00 /* RowsFFTVisualizationViewController.h */,
-				A348D0D520AA28F800280D00 /* RowsFFTVisualizationViewController.m */,
+				A348D0D420AA28F800280D00 /* RowsProjectionSootheningViewController.h */,
+				A348D0D520AA28F800280D00 /* RowsProjectionSootheningViewController.m */,
+				A321162D20B37AF4004D4D7D /* CroppedPhotoViewController.h */,
+				A321162E20B37AF4004D4D7D /* CroppedPhotoViewController.m */,
+				A321163020B38542004D4D7D /* VerticalProjectionViewController.h */,
+				A321163120B38542004D4D7D /* VerticalProjectionViewController.m */,
+				A321163320B385BD004D4D7D /* ColumnProjectionSmootheningViewController.h */,
+				A321163420B385BD004D4D7D /* ColumnProjectionSmootheningViewController.m */,
+				A321163620B38ABC004D4D7D /* CroppedSymbolViewController.h */,
+				A321163720B38ABC004D4D7D /* CroppedSymbolViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -229,13 +249,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3A6ACC9207AA93F007CFE31 /* UploadImageViewController.m in Sources */,
+				A321163520B385BD004D4D7D /* ColumnProjectionSmootheningViewController.m in Sources */,
 				A3A6ACC0207AA8EE007CFE31 /* main.m in Sources */,
 				A3AAECA220A339AC0032DF17 /* ChooseImageViewController.m in Sources */,
+				A321163220B38542004D4D7D /* VerticalProjectionViewController.m in Sources */,
 				A3A6ACB2207AA8EC007CFE31 /* AppDelegate.m in Sources */,
+				A321163820B38ABC004D4D7D /* CroppedSymbolViewController.m in Sources */,
+				A321162F20B37AF4004D4D7D /* CroppedPhotoViewController.m in Sources */,
 				A348D0D920AA294400280D00 /* Complex.m in Sources */,
 				A3B21B652087956300870A5E /* TwoDimArray.m in Sources */,
 				A3CE962220A7911C0005F540 /* HorizontalProjectionViewController.m in Sources */,
-				A348D0D620AA28F800280D00 /* RowsFFTVisualizationViewController.m in Sources */,
+				A348D0D620AA28F800280D00 /* RowsProjectionSootheningViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

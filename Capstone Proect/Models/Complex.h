@@ -12,6 +12,6 @@
 
 @property (nonatomic) double re;
 @property (nonatomic) double im;
-
+@property (nonatomic) double sumOfSquares;
 
 @end

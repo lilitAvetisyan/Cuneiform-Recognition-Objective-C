@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RowsFFTVisualizationViewController : UIViewController
+@interface RowsProjectionSootheningViewController : UIViewController
 @property NSMutableArray* rows;
+@property (strong) UIImage* image;
 
 @end
