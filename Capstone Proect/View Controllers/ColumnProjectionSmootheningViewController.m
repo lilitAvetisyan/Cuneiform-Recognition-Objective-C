@@ -75,7 +75,7 @@
     
     int point1 = 0, point2 = 0;
     for (int i = 1; i < projectionPicksArr.count; i++) {
-        if ([projectionPicksArr[i] intValue] - [projectionPicksArr[i-1] intValue] == 60 ) {
+        if ([projectionPicksArr[i] intValue] - [projectionPicksArr[i-1] intValue] == 62 ) {
             
             point1 = [projectionPicksArr[i - 1] intValue];
             point2 = [projectionPicksArr[i +1] intValue];
@@ -98,13 +98,13 @@
     NSMutableArray* newSmallArr = [[NSMutableArray alloc] init];
     //  seperate each 21st element of the inital array and assign it to newSmallArr
     
-    for (int i = 0; i < 20; i++) {
+    for (int i = 0; i < 15; i++) {
         [smoothenedArrCols addObject:_clmns[i]];
     }
     
-    for (int i = 20; i < _clmns.count-20; i++) {
+    for (int i = 15; i < _clmns.count-15; i++) {
         //        // rows[i-10] - rows[i+10]: range to find mean
-        for (int j = i-20; j < i+20; j++) {
+        for (int j = i-15; j < i+15; j++) {
             [newSmallArr addObject:_clmns[j]];
         }
         

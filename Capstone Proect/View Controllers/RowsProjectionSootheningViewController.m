@@ -95,12 +95,13 @@
             
              point1 = [projectionPicksArr[i - 1] intValue];
              point2 = [projectionPicksArr[i +1] intValue];
-            NSLog(@"The region of the row is between these lenghty points:\nPoint1: %d \nPoint2: %d", point1, point2);
+            NSLog(@"The region of the row is between these points:\nPoint1: %d \nPoint2: %d", point1, point2);
         }
     }
     
+    double stDev = [self standardDeviationOf:distanceBetweenPicks];
     
-    CGRect cropRect = CGRectMake(0, point2, self.image.size.width, 51);
+    CGRect cropRect = CGRectMake(0, point2-stDev, self.image.size.width, 51+stDev);
     
 
     croppedImage = [self croppIngimageByImageName:cropRect];
@@ -108,38 +109,42 @@
 }
 
 -(void)smoothenArr{
-    //  create new arr, based on the inital rows Array
-//    NSMutableArray* newRowsArr = [[NSMutableArray alloc] init];
-    //everything to be stored here
     NSMutableArray* newSmallArr = [[NSMutableArray alloc] init];
-    //  seperate each 21st element of the inital array and assign it to newSmallArr
-    
     for (int i = 0; i < 10; i++) {
         [smoothenedArrRows addObject:_rows[i]];
     }
     
     for (int i = 10; i < _rows.count-10; i++) {
-//        // rows[i-10] - rows[i+10]: range to find mean
         for (int j = i-10; j < i+10; j++) {
             [newSmallArr addObject:_rows[j]];
         }
-        
-        
-        
         double meanElement = [self findMean:newSmallArr];
         [newSmallArr removeAllObjects];
         [smoothenedArrRows addObject:[NSNumber numberWithDouble:meanElement]];
     }
-    
     for (int i = (int)_rows.count-10; i< _rows.count; i++) {
         [smoothenedArrRows addObject:_rows[i]];
 
     }
-    
-    // should create the new projection.... should
     [self createProjection:smoothenedArrRows];
+}
 
+#pragma mark mean and standard dev
+- (double)standardDeviationOf:(NSMutableArray *)array
+{
+//    if(![array count]) return nil;
     
+    double mean = [self findMean:array] ;
+    double sumOfSquaredDifferences = 0.0;
+    
+    for(NSNumber *number in array)
+    {
+        double valueOfNumber = [number doubleValue];
+        double difference = valueOfNumber - mean;
+        sumOfSquaredDifferences += difference * difference;
+    }
+    
+    return sqrt(sumOfSquaredDifferences / [array count]);
 }
 
 -(double)findMean:(NSMutableArray*) arr{
@@ -205,14 +210,13 @@
     [self.navigationController pushViewController:vc animated:NO];
 }
 #pragma mark FFT NOT NEEDED
+
 -(void)transformProjectionToComplex{
     for (int i = 0; i < _rows.count; i++) {
         Complex* complex = [[Complex alloc] init];
         complex.re = i;
         complex.im = [_rows[i] doubleValue];
-        
         [inputArr addObject:complex];
-        
     }
 }
 
@@ -227,7 +231,6 @@
             sumreal += [inputArr[t] re] *cos(angle) + [inputArr[t] im]*sin(angle);
             sumimag +=  [inputArr[t] im] * cos(angle) - [inputArr[t] re] * sin(angle);
         }
-        
         Complex* complex = [[Complex alloc] init];
         complex.re = s * sumreal;
         complex.im = s * sumimag;
@@ -235,21 +238,10 @@
         [sumOfSquares addObject: [NSNumber numberWithDouble: complex.sumOfSquares]];
         [finalFunctionG addObject:complex];        
     }
-    
-    [self findOmega];
-    
-    
-    
-    omega = 14; // to be changed
-    NSLog(@"%f",omega);
-
-//    [self createProjection];
-    
 }
 
 -(void)findOmega{
     double max = 0;
-//    double min = 99999999999;
     for (int i = 1; i < finalFunctionG.count/2; i ++) {
         Complex* c = finalFunctionG[i];
         if (max < c.sumOfSquares) {
